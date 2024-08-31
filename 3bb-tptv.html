@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HBO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
+<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+</script>
+<div id="player"></div>
+<script>
+    var playerInstance = jwplayer("player");
+
+    playerInstance.setup({
+
+        playlist: [{
+"image": "https://dl.dropbox.com/scl/fi/563mscujyrmynb03qvwtp/wandering-oldman-logo.png?rlkey=a6v56e1rgt96luwlzqe2ofbfi&dl=0",
+"sources": [
+{
+"default": true,
+"type": "dash",
+"file": 'https://cco-streamer1.cdn.3bbtv.com:8443/3bb/live/10/10.mpd',
+"drm": {
+"clearkey": { "keyId": "5da46688fd1e4ed5b085a12519b9dc4e", "key": "fd07bcf33823447180f53f6540f74ccb" }
+},
+"label": "1"
+}
+]
+}],
+logo: { file: "https://dl.dropbox.com/scl/fi/2j77jf0bvljski63r43es/small1.png?rlkey=kcyqs5hnpvkoda0vss4rkooo0&dl=0", position: 'bottom-right' },
+ width: "100%",
+        height: "100%",
+        aspectratio: "16:9",
+        mute: false,
+        autostart: true,
+        cast: {},
+    });
+    if (getLang == "") {
+   lang = 1;
+  }
+  jwplayer().on('play', function(e) {
+    jwplayer().setCurrentAudioTrack(lang);
+  });
+</script>
